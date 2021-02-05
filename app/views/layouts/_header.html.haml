@@ -1,5 +1,12 @@
-%P.m-3 another way
-%div.m4-4
-  %li= link_to 'ログイン', login_path, class: "mr-4"
-  %li= link_to '新規登録', signup_path, class: "mr-4"
-  %li= link_to 'お気に入り', "#", class: "mr-4"
+.d-flex.bd-highlight.mb-5.pt-3.pb-3.bg-light
+  .mr-auto.p-2.bd-highlight= link_to "another way", root_path
+  - if user_signed_in?
+    .p-2.bd-highlight= link_to 'ログアウト', logout_path, method: :delete, class: "mr-4"
+    .p-2.bd-highlight= link_to 'アカウント', "#", class: "mr-4"
+  - else
+    .p-2.bd-highlight= link_to 'ログイン', login_path, class: "mr-4"
+    .p-2.bd-highlight= link_to '新規登録', signup_path, class: "mr-4"
+  .p-2.bd-highlight= link_to 'お気に入り', "#", class: "mr-4"
+
+
+

@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 gem "haml-rails"
 gem "devise"
+gem 'devise-bootstrap-views'
 gem "omniauth", "1.9.1"
 gem "omniauth-facebook"
 gem "omniauth-github"

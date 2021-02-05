@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_05_023247) do
+ActiveRecord::Schema.define(version: 2021_02_05_061923) do
+
+  create_table "spaces", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "pref", null: false
+    t.string "city", null: false
+    t.string "detailaddress"
+    t.integer "tel", null: false
+    t.string "station", null: false
+    t.integer "station_walk", null: false
+    t.text "description", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_spaces_on_name"
+    t.index ["pref"], name: "index_spaces_on_pref"
+    t.index ["station"], name: "index_spaces_on_station"
+    t.index ["user_id"], name: "index_spaces_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,4 +59,5 @@ ActiveRecord::Schema.define(version: 2021_02_05_023247) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "spaces", "users"
 end

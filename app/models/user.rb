@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+
+  has_many :spaces
   # Include default devise modules. Others available are:
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable, :trackable,
+         :lockable, :timeoutable, :trackable,
          :omniauthable
   
   def self.find_of_create(auth)
