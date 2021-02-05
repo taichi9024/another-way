@@ -5,6 +5,12 @@ ruby '2.6.6'
 
 gem "haml-rails"
 gem "devise"
+gem "omniauth", "1.9.1"
+gem "omniauth-facebook"
+gem "omniauth-github"
+gem 'omniauth-google-oauth2'
+gem "dotenv-rails"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
 # Use sqlite3 as the database for Active Record

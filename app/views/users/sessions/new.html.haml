@@ -31,3 +31,6 @@
         Hogezonの新しいお客様ですか？
         %span ------------
       = link_to "Hogezonアカウントを作成", new_user_registration_path
+      = link_to "facebookアカウントでログイン", user_facebook_omniauth_authorize_path
+      = link_to "githubアカウントでログイン", user_github_omniauth_authorize_path
+      = link_to "googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path

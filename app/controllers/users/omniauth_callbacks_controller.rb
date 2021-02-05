@@ -5,8 +5,30 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # devise :omniauthable, omniauth_providers: [:twitter]
 
   # You should also create an action method in this controller like this:
-  # def twitter
-  # end
+  def facebook
+    callback_from(:facebook)
+  end
+
+  def github
+    callback_from(:github)
+  end
+
+  def google_oauth2
+    callback_from(:google_oauth2)
+  end
+
+  def callback_from(provider)
+    provider = provider.to_s
+    @user = User.find_of_create(request.env["omniauth.auth"])
+
+    if @user.persisted?
+      flash.notice = "#{provider}アカウントでログインできました"
+      sign_in_and_redirect @user
+    else
+      session["devise.#{provider}_data"] = request.env['omniauth.auth']
+      redirect_to new_user_registration_url
+    end
+  end
 
   # More info at:
   # https://github.com/heartcombo/devise#omniauth
