@@ -1,2 +1,53 @@
-%h1 Spaces#show
-%p Find me in app/views/spaces/show.html.haml
+%h1.text-center= @space.name
+
+%p.text-center
+  = link_to  @space.pref , "#"
+  ＞#{link_to @space.station, "#"}＞#{link_to  @space.name, "#"}
+
+- if current_user == @space.user
+  =link_to "情報を更新する", edit_space_path(@space), class:"btn btn-success"
+  =link_to "掲載を削除する", space_path(@space),method: :delete,  class:"btn btn-danger",data:{confirm:"この掲載を削除しますよろしいですか？"}
+
+%div.flex.ml-5
+  %table.table
+    %thead
+      %tr
+        %th{:scope => "col"} #
+        %th{:scope => "col"}= @space.name
+
+    %tbody
+      %tr
+        %th{:scope => "row"} 都道府県
+        %td= @space.pref
+
+      %tr
+        %th{:scope => "row"} 住所
+        %td= @space.city
+
+      %tr
+        %th{:scope => "row"} 最寄駅
+        %td= @space.station
+
+      %tr
+        %th{:scope => "row"} 駅から徒歩
+        %td= @station_walk.to_i
+
+      %tr
+        %th{:scope => "row"} 説明
+        %td= @space.description
+
+      %tr
+        %th{:scope => "row"} 登録日
+        %td= @space.created_at
+
+
+  %table.table2
+    %thead
+      %tr
+        %th{:scope => "col"} #
+        %th{:scope => "col"}= @space.name
+
+    %tbody
+      %tr
+        %th{:scope => "row"} 1
+        %td Mark
