@@ -1,2 +1,22 @@
-%h1 Spaces#index
-%p Find me in app/views/spaces/index.html.haml
+%h2.ml-3 gmap
+.wrapper.ml-3
+  #map
+  %div
+    .p-2.bd-highlight= link_to 'ログアウト', logout_path, method: :delete, class: "ml-4"
+    .p-2.bd-highlight= link_to 'アカウント', "#", class: "ml-4"
+:css
+  #map{
+    height: 400px;
+    width: 800px;
+  }
+:javascript
+  function initMap(){
+    let map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.6809591, lng: 139.7673068},
+    zoom: 11
+    });
+  }
+%script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyALco9Ata7sUkQ5JE0RSz7Q0zqdF8cvvhQ&callback=initMap"}
+  
+
+
