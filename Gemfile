@@ -12,6 +12,8 @@ gem "omniauth-github"
 gem 'omniauth-google-oauth2'
 gem "dotenv-rails"
 gem "geocoder"
+gem "ransack"
+gem "kaminari"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'

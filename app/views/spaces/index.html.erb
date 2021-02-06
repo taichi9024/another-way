@@ -1,21 +1,35 @@
 <h2 class="ml-5">スペース検索ページ</h2>
 
-<div class="wrapper ml-5">
-    <div id='map'></div>
+<div class="wrapper">
+    <div id='map' class="ml-5"></div>
     <div class="ml-5">
+    <h3 class="text-center mb-2">物件一覧</h3>
+
+    <%= search_form_for @q do |f| %>
+      <div class="form-group">
+      <%= f.label :city_cont, "市町村を検索してください",class:"form-control" %>
+      <%= f.search_field :city_cont, class:"form-control" %>
+      <%= f.submit class:"btn btn-primary mb-5" %>
+      </div>
+    <% end %>
+
+    <%= paginate @spaces %>
     <% @spaces.each do |space| %>
       <p>名前: <%= link_to space.name, space_path(space) %></p>
       <p>区: <%= space.city %></p>
       <p>最寄駅: <%= space.station %></p>
     <% end %>
+
+        <%= paginate @spaces %>
+    <%= page_entries_info @spaces %>
   
     </div>
 </div>
 
 <style>
 #map{
-  height: 400px;
-  width: 600px;
+  height: 500px;
+  width: 800px;
 }
 </style>
 

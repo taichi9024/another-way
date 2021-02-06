@@ -12,7 +12,8 @@ class SpacesController < ApplicationController
   end 
 
   def index
-    @spaces = Space.all
+    @q = Space.all.ransack(params[:q])
+    @spaces = @q.result(distinct: true).page(params[:page]).per(10)
   end
 
   def show
