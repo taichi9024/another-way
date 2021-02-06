@@ -1,0 +1,54 @@
+<h2 class="ml-5">スペース検索ページ</h2>
+
+<div class="wrapper ml-5">
+    <div id='map'></div>
+    <div class="ml-5">
+    <% @spaces.each do |space| %>
+      <p>名前: <%= link_to space.name, space_path(space) %></p>
+      <p>区: <%= space.city %></p>
+      <p>最寄駅: <%= space.station %></p>
+    <% end %>
+  
+    </div>
+</div>
+
+<style>
+#map{
+  height: 400px;
+  width: 600px;
+}
+</style>
+
+<script>
+function initMap(){
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 35.6503154, lng: 139.7063833},
+  zoom: 10
+  });
+
+        <% @spaces.each do |space| %>
+          (function(){
+          var contentString = "<%= space.name %>"; 
+          var markerLatLng = new google.maps.LatLng({lat: <%= space.latitude %>, lng: <%= space.longitude %>});
+
+          var marker = new google.maps.Marker({
+              position: markerLatLng,
+              map: map,
+          });
+                var infowindow = new google.maps.InfoWindow({
+                position: markerLatLng,
+                content: contentString
+              })
+
+              marker.addListener('click', function() {
+                infowindow.open(map, marker);
+              });
+
+          })();
+      <% end %>
+
+  
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALco9Ata7sUkQ5JE0RSz7Q0zqdF8cvvhQ&callback=initMap" async defer></script>

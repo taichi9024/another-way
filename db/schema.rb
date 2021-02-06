@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_05_061923) do
+ActiveRecord::Schema.define(version: 2021_02_06_002124) do
 
   create_table "spaces", force: :cascade do |t|
     t.string "name", null: false
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_02_05_061923) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["name"], name: "index_spaces_on_name"
     t.index ["pref"], name: "index_spaces_on_pref"
     t.index ["station"], name: "index_spaces_on_station"
