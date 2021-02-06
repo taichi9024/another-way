@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :spaces do
     resources :comments
+    resources :likes
   end
+  
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',

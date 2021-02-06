@@ -40,6 +40,15 @@
         %th{:scope => "row"} 登録日
         %td= @space.created_at
 
+
+%div.mt-5.ml-5
+  %h6 お気に入り登録
+  %h5 お気に入り数"#{@likes.count.to_i}"
+  - if current_user.likes.where(space_id: params[:id]).first
+    =link_to "お気に入り解除", space_like_path(@space), method: :delete ,class:"btn btn-primary" , data:{confirm: "お気に入り登録を解除しても良いですか？"}
+  - else 
+    =link_to "お気に入り", space_likes_path(@space),method: :post, class:"btn btn-danger"
+
 %div.mt-5.ml-5
   %h4 コメント
 
