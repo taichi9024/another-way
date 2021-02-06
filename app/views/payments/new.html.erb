@@ -1,0 +1,8 @@
+<h1 class="text-center">決済ページ</h1>
+　　<%= form_with(model: @payment,url:space_payments_path(params[:space_id]), method: :post, local: true) do %>
+  <script type="text/javascript"
+    src="https://checkout.pay.jp"
+    class="payjp-button"
+    data-key="pk_test_df4f7a6e3cf1620e7f76e5f2" >
+  </script>
+<% end %>

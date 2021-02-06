@@ -14,6 +14,7 @@ gem "dotenv-rails"
 gem "geocoder"
 gem "ransack"
 gem "kaminari"
+gem "payjp"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'

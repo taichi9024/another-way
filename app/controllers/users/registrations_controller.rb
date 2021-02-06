@@ -7,6 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def detail
     @user = User.find_by(id: params[:id])
+    @payments = Payment.where(user_id: params[:id]).all
   end
 
   # GET /resource/sign_up

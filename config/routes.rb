@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  
   resources :spaces do
     resources :comments
     resources :likes
+    resources :payments
   end
 
   resources :feedbacks

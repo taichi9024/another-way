@@ -16,7 +16,7 @@
     <%= paginate @spaces %>
     <% @spaces.each do |space| %>
       <p>名前: <%= link_to space.name, space_path(space) %></p>
-      <p>区: <%= space.city %></p>
+      <p>価格: <%= space.price %></p>
       <p>最寄駅: <%= space.station %></p>
     <% end %>
 

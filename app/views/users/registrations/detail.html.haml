@@ -1,18 +1,22 @@
-%table.table.user-table
-  %thead.thead-dark
+%h2 予約一覧
+%table.table.table-striped.table-dark
+  %thead
     %tr
       %th{:scope => "col"} #
       %th{:scope => "col"} name
-  %tbody
-    %tr
-      %th{:scope => "row"} id
-      %td=@user.id
-    %tr
-      %th{:scope => "row"} name
-      %td=@user.name
+      %th{:scope => "col"} place
+      %th{:scope => "col"} created_at
+      %th{:scope => "col"} 確認する
 
-    %tr
-      %th{:scope => "row"} created_at
-      %td=@user.created_at
+  %tbody
+    - @payments.each do |pay|
+      %tr
+        %th{:scope => "row"}= pay.id
+        %td= pay.placename
+        %td= pay.price
+        %td= pay.created_at
+        %td= pay.id
+
+
 
 = link_to "アプリの評価をする",  new_feedback_path, class:"btn btn-success"

@@ -19,6 +19,10 @@
       %tr
         %th{:scope => "row"} 都道府県
         %td= @space.pref
+      
+      %tr
+        %th{:scope => "row"} 価格
+        %td= @space.price.to_i
 
       %tr
         %th{:scope => "row"} 住所
@@ -40,6 +44,8 @@
         %th{:scope => "row"} 登録日
         %td= @space.created_at
 
+%h1.text-center 決済ページ
+=link_to "決済する",new_space_payment_path(@space),class:"btn btn-success ml-5"
 
 %div.mt-5.ml-5
   %h6 お気に入り登録

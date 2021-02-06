@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_092727) do
+ActiveRecord::Schema.define(version: 2021_02_06_102409) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 2021_02_06_092727) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "owner", null: false
+    t.string "placename", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
   create_table "spaces", force: :cascade do |t|
     t.string "name", null: false
     t.string "pref", null: false
@@ -52,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_02_06_092727) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "price"
     t.index ["name"], name: "index_spaces_on_name"
     t.index ["pref"], name: "index_spaces_on_pref"
     t.index ["station"], name: "index_spaces_on_station"
@@ -91,5 +102,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_092727) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "spaces"
   add_foreign_key "likes", "users"
+  add_foreign_key "payments", "users"
   add_foreign_key "spaces", "users"
 end
