@@ -18,6 +18,7 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find_by(id: params[:id])
+    @comments = Comment.where(space_id: params[:id]).all
   end
 
   def edit

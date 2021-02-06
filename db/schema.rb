@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_002124) do
+ActiveRecord::Schema.define(version: 2021_02_06_024942) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "space_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["space_id"], name: "index_comments_on_space_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "spaces", force: :cascade do |t|
     t.string "name", null: false
@@ -61,5 +71,7 @@ ActiveRecord::Schema.define(version: 2021_02_06_002124) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "comments", "spaces"
+  add_foreign_key "comments", "users"
   add_foreign_key "spaces", "users"
 end

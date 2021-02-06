@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :spaces
+  has_many :comments
   # Include default devise modules. Others available are:
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,

@@ -40,14 +40,20 @@
         %th{:scope => "row"} 登録日
         %td= @space.created_at
 
+%div.mt-5.ml-5
+  %h4 コメント
 
-  %table.table2
-    %thead
-      %tr
-        %th{:scope => "col"} #
-        %th{:scope => "col"}= @space.name
+  .row
+    .col-md-6.col-md-offset-3.mb-3
+      = form_with(model: @comment,url: space_comments_path(@space) ,method: :post, local: true) do |f|
+        = f.label :content
+        = f.text_field :content, class: 'form-control'
+        = f.submit class:"btn btn-primary"
 
-    %tbody
-      %tr
-        %th{:scope => "row"} 1
-        %td Mark
+  - @comments.each do |comment|
+    %h5= comment.content
+    %h6= comment.user.name
+    = comment.created_at
+
+
+  
