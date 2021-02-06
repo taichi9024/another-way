@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :comments
     resources :likes
   end
+
+  resources :feedbacks
   
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',

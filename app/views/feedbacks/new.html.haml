@@ -1,0 +1,7 @@
+%h1.text-center ご感想をお聞かせください！
+.row
+  .col-md-6.col-md-offset-3
+    = form_with(model: @feedback, local: true) do |f|
+      = f.label :content
+      = f.text_area :content, class: 'form-control'
+      = f.submit "投稿する", class:"btn btn-primary"
