@@ -1,0 +1,6 @@
+%h1 adminログイン画面
+= form_with model:@staff, method: :post ,local:true do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class:"form-control"
+    = f.submit class:"btn btn-primary"

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     root 'top#index'
+    resources :staffs, only:[:new, :create, :destroy]
   end
   resources :spaces do
     resources :comments

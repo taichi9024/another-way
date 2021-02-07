@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_102409) do
+ActiveRecord::Schema.define(version: 2021_02_07_032048) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -67,6 +67,12 @@ ActiveRecord::Schema.define(version: 2021_02_06_102409) do
     t.index ["pref"], name: "index_spaces_on_pref"
     t.index ["station"], name: "index_spaces_on_station"
     t.index ["user_id"], name: "index_spaces_on_user_id"
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
