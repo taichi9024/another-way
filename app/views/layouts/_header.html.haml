@@ -1,1 +1,7 @@
-= link_to 'お気に入り', "#", class: "mr-4"
+.d-flex.bd-highlight.mb-5.pt-3.pb-3.bg-light
+  .mr-auto.p-2.bd-highlight= link_to "another way", admin_root_path
+  - if current_staff
+    .p-2.bd-highlight= link_to 'ログアウト', admin_logout_path, method: :delete, class: "mr-4"
+  - else
+    .p-2.bd-highlight= link_to 'ログイン', admin_login_path, class: "mr-4"
+    

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
   namespace :admin do
-    root 'top#index'
-    resources :staffs, only:[:new, :create, :destroy]
+    root 'staffs#new'
+    get "dashboard" , :to => "top#index"
+    get "login", :to => "staffs#new"
+    post "session", :to => "staffs#create"
+    delete "logout", :to => "staffs#destroy"
   end
   resources :spaces do
     resources :comments
