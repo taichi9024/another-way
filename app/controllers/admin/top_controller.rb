@@ -8,7 +8,7 @@ class Admin::TopController < ApplicationController
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
-      username == "hoge" && password == "hoge"
+      username == ENV["BASIC_NAME"] && password == ENV["BASIC_PASS"]
     end
   end
   

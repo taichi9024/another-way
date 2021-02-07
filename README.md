@@ -22,3 +22,30 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+記法                                                 
+haml
+
+devise                                  
+
+omniauth使ったログイン実装         
+facebook google github
+                                    
+投稿機能
+CRUD　　　　　　　　　　　　　   
+google gmap導入                                
+
+検索機能
+ランサック                                      
+kaminari                                         
+seedfu
+
+db
+コメント機能                                  
+いいね機能                                      
+
+メール機能
+actionmailer          
+
+決済
+payjp　
