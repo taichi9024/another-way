@@ -1,0 +1,18 @@
+%h1.text-center フィードバック一覧画面
+
+%table.table
+  %thead
+    %tr
+      %th{:scope => "col"} フィードバックid
+      %th{:scope => "col"} 送信先メール
+      %th{:scope => "col"} 内容
+      %th{:scope => "col"} 送信時間
+  %tbody
+    - @feedbacks.each do |fb|
+      %tr 
+        %td= fb.id
+        %td= fb.email
+        %td= fb.content
+        %td= fb.created_at
+
+= paginate @feedbacks

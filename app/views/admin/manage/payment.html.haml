@@ -1,0 +1,22 @@
+%h1.text-center 決済一覧画面
+
+%table.table
+  %thead
+  %tr
+    %th{:scope => "col"} id
+    %th{:scope => "col"} 利用者
+    %th{:scope => "col"} オーナー
+    %th{:scope => "col"} 金額
+    %th{:scope => "col"} スペース名
+    %th{:scope => "col"} 決済時刻
+  %tbody
+    - @payments.each do |pay|
+      %tr 
+        %td= pay.id
+        %td= pay.user.name
+        %td= pay.owner
+        %td= pay.price
+        %td= pay.placename
+        %td= pay.created_at
+
+= paginate @payments

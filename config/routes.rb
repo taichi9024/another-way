@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
   
   namespace :admin do
+    get 'manage/user'
+  end
+  namespace :admin do
     root 'staffs#new'
     get "dashboard" , :to => "top#index"
     get "login", :to => "staffs#new"
     post "session", :to => "staffs#create"
     delete "logout", :to => "staffs#destroy"
+
+    get "user", :to => 'manage#user'
+    get "payment", :to => 'manage#payment'
+    get "space", :to => 'manage#space'
+    get "comment", :to => 'manage#comment'
+    get "fb", :to => 'manage#fb'
+
   end
   resources :spaces do
     resources :comments

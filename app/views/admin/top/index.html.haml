@@ -1,7 +1,8 @@
 %h1.text-center anther way 管理画面
 
-= link_to "ユーザー検索", "#", class:"btn btn-danger"
-= link_to "予約検索", "#", class:"btn btn-success"
-= link_to "スペース検索", "#", class:"btn btn-warning"
-= link_to "コメント一覧", "#", class:"btn btn-info"
-= link_to "フィードバック一覧", "#", class:"btn btn-secondary"
+= link_to "ユーザー検索", admin_user_path, class:"btn btn-danger"
+= link_to "トランザクション一覧", admin_payment_path, class:"btn btn-success"
+= link_to "スペース検索", admin_space_path, class:"btn btn-warning"
+%br
+= link_to "コメント一覧", admin_comment_path, class:"btn btn-info"
+= link_to "フィードバック一覧", admin_fb_path, class:"btn btn-secondary"

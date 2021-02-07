@@ -1,0 +1,22 @@
+%h1.text-center スペース一覧画面
+
+%table.table
+  %thead
+  %tr
+    %th{:scope => "col"} id
+    %th{:scope => "col"} スペース名
+    %th{:scope => "col"} オーナー
+    %th{:scope => "col"} 電話番号
+    %th{:scope => "col"} 価格
+    %th{:scope => "col"} 最寄駅
+  %tbody
+    - @spaces.each do |space|
+      %tr 
+        %td= space.id
+        %td= space.name
+        %td= space.user.name
+        %td= space.tel
+        %td= space.price
+        %td= link_to "詳細", "/spaces/#{space.id}/"
+
+= paginate @spaces
