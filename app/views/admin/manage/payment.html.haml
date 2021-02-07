@@ -20,3 +20,4 @@
         %td= pay.created_at
 
 = paginate @payments
+= link_to "決済情報をダウンロード", admin_payment_path(format: :csv), class: "btn btn-primary"

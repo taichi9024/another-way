@@ -20,3 +20,4 @@
         %td= link_to "詳細", "/spaces/#{space.id}/"
 
 = paginate @spaces
+= link_to "スペース情報をダウンロード", admin_space_path(format: :csv), class: "btn btn-primary"

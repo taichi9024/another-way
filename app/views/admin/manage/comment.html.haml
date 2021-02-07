@@ -18,3 +18,4 @@
         %td= com.created_at
         
 = paginate @comments
+= link_to "コメント一覧をダウンロード", admin_comment_path(format: :csv), class: "btn btn-primary"

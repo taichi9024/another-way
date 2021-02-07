@@ -16,3 +16,4 @@
         %td= fb.created_at
 
 = paginate @feedbacks
+= link_to "フィードバック情報をダウンロード", admin_fb_path(format: :csv), class: "btn btn-primary"
