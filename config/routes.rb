@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  namespace :admin do
+    root 'top#index'
+  end
   resources :spaces do
     resources :comments
     resources :likes
@@ -7,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :feedbacks
+  resource :profile
   
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
