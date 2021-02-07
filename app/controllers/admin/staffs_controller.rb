@@ -1,6 +1,7 @@
 class Admin::StaffsController < ApplicationController
     def new
         @staff = Staff.new
+        raise
     end
 
     def create
