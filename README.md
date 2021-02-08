@@ -59,3 +59,6 @@ lineシェア機能
 basic認証                                    
 
 ujs disable with data       
+
+エラーハンドリング    
+i18n日本語に対応  

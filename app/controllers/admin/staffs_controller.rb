@@ -1,6 +1,5 @@
 class Admin::StaffsController < ApplicationController
     def new
-        raise ActiveRecord::RecordNotFound
         @staff = Staff.new
     end
 

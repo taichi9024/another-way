@@ -8,7 +8,7 @@
       <div class="form-group">
       <%= f.label :city_cont, "市町村を検索してください",class:"form-control" %>
       <%= f.search_field :city_cont, class:"form-control" %>
-      <%= f.submit class:"btn btn-primary mb-5" %>
+      <%= f.submit "検索する", class:"btn btn-primary mb-5" %>
       </div>
     <% end %>
 
@@ -20,7 +20,6 @@
     <% end %>
 
         <%= paginate @spaces %>
-    <%= page_entries_info @spaces %>
   
     </div>
 </div>

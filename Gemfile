@@ -6,6 +6,8 @@ ruby '2.6.6'
 gem "haml-rails"
 gem "devise"
 gem 'devise-bootstrap-views'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem "omniauth", "1.9.1"
 gem "omniauth-facebook"
 gem "omniauth-github"
@@ -15,6 +17,7 @@ gem "geocoder"
 gem "ransack"
 gem "kaminari"
 gem "payjp"
+gem 'rails-i18n'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'

@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      space: スペース 
+    attributes:
+      space: スペース
+      name: 物件名
+      price: 価格
