@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_staff
     helper_method :page_title
+
+    class Forbidden < ActionController::ActionControllerError; end
+    class IpAddressRejected < ActionController::ActionControllerError; end
+    include ErrorHandle
+
     private
     def set_layout
         if params[:controller].include?("admin")

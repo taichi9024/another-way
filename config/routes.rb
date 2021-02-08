@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   
   namespace :admin do
-    get 'manage/user'
-  end
-  namespace :admin do
     root 'staffs#new'
     get "dashboard" , :to => "top#index"
     get "login", :to => "staffs#new"
@@ -39,6 +36,7 @@ Rails.application.routes.draw do
   end
   
   root 'home#index'
+  get '*path', controller: 'application', action: 'e404'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
