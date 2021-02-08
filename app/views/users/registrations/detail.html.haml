@@ -4,6 +4,7 @@
       %tr
         %th{:scope => "col"} 利用者名
         %th{:scope => "col"}= @user.name
+        %th{:scope => "col"}= link_to "編集する", edit_prof_path(@user),class:"btn btn-primary"
 
     %tbody
       %tr
@@ -12,28 +13,19 @@
       
       %tr
         %th{:scope => "row"} メール
-        %td= @user.name if @user.uid
-      
-      %tr
-        %th{:scope => "row"} 登録日
-        %td= @user.created_at
+        %td= @user.name
       
       %tr
         %th{:scope => "row"} 電話番号
         %td= "#"
-
-      %tr
-        %th{:scope => "row"} パスワード
-        %td= @user.password 
         
-
       %tr
         %th{:scope => "row"} 登録日
         %td= @user.created_at
 
 
-%h2 予約一覧
-%table.table.table-striped.table-dark
+%h4.text-center.mt-5 予約一覧
+%table.table.ml-5
   %thead
     %tr
       %th{:scope => "col"} 物件名
@@ -51,4 +43,4 @@
         %td= pay.owner
 
 %div
-  = link_to "アプリの評価をする",  new_feedback_path, class:"btn btn-primary"
+  = link_to "アプリの評価をする",  new_feedback_path, class:"btn btn-primary ml-3 mt-5"

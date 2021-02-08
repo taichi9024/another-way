@@ -1,24 +1,24 @@
 - content_for(:title, '掲載ページ')
 %h1.text-center スペースの掲載
 .row
-  .col-md-6.col-md-offset-3
+  .col-md-6.col-md-offset-3.ml-5
     = form_with(model: @space, local: true) do |f|
-      = f.label :name, "物件名"
-      = f.text_field :name, class: 'form-control'
-      = f.label :price, "価格"
-      = f.text_field :price, class: 'form-control'
-      = f.label :pref,"都道府県"
-      = f.text_field :pref, class: 'form-control'
-      = f.label :city,"都市名"
-      = f.text_field :city, class: 'form-control'
-      = f.label :detailaddress,"番地以下"
-      = f.text_field :detailaddress, class: 'form-control'
-      = f.label :tel,"電話番号"
-      = f.text_field :tel, class: 'form-control'
-      = f.label :station,"駅名"
-      = f.text_field :station, class: 'form-control'
-      = f.label :station_walk,"徒駅から歩"
-      = f.text_field :station_walk, class: 'form-control'
-      = f.label :description,"詳細な説明"
-      = f.text_area :description, class: 'form-control'
+      = f.label :name, "物件名を入力して下さい！"
+      = f.text_field :name, class: 'form-control mb-4'
+      = f.label :price, "1時間あたりの価格を入力して下さい"
+      = f.text_field :price, class: 'form-control mb-4'
+      = f.label :pref,"都道府県を入力して下さい"
+      = f.text_field :pref, class: 'form-control mb-4'
+      = f.label :city,"都市名を入力してください"
+      = f.text_field :city, class: 'form-control mb-4'
+      = f.label :detailaddress,"番地以下を入力してください"
+      = f.text_field :detailaddress, class: 'form-control mb-4'
+      = f.label :tel,"電話番号を入力してください"
+      = f.text_field :tel, class: 'form-control mb-4'
+      = f.label :station,"駅名を入力してください"
+      = f.text_field :station, class: 'form-control mb-4'
+      = f.label :station_walk,"駅から徒歩何分で着くか入力して下さい"
+      = f.text_field :station_walk, class: 'form-control mb-4'
+      = f.label :description,"詳細な説明を入力してください"
+      = f.text_area :description, class: 'form-control mb-4'
       = f.submit "送信する", data: { disable_with: "送信中..." } ,class:"btn btn-primary"

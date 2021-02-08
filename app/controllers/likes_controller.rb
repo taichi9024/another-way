@@ -9,4 +9,8 @@ class LikesController < ApplicationController
     @like.delete
     redirect_to space_path(params[:space_id]), danger: 'お気に入り解除しました'
   end
+
+  def index
+    @likes = current_user.likes.all
+  end
 end

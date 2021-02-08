@@ -2,7 +2,7 @@
   .mr-auto.p-2.bd-highlight.ml-5= link_to "another way", spaces_path
   - if user_signed_in?
     .p-2.bd-highlight= link_to 'ログアウト', logout_path, method: :delete, class: "mr-4"
-    .p-2.bd-highlight= link_to 'お気に入り', "#", class: "mr-4"
+    .p-2.bd-highlight= link_to 'お気に入り', likes_path, class: "mr-4"
     .p-2.bd-highlight= link_to 'アカウント', "/user/#{current_user.id}/", class: "mr-4"
     .p-2.bd-highlight= link_to 'スペース掲載', new_space_path, class: "mr-4"
   - else
