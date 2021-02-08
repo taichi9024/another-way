@@ -3,7 +3,10 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
   has_many :payments
-  # Include default devise modules. Others available are:
+
+  validates :name, presence: true
+  validates :price, numericality: true
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :lockable, :timeoutable, :trackable,
@@ -18,6 +21,8 @@ class User < ApplicationRecord
                       user.password = Devise.friendly_token[0, 20]
     end
   end
+
+  private
 
   def self.dummy_email(auth)
     "#{auth.uid}-#{auth.provider}@example.com"

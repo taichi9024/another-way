@@ -6,4 +6,6 @@
       = f.text_field :email,:placeholder => "#{@current_user.email}", class: 'form-control'
       = f.label :name
       = f.text_field :name,:placeholder => "#{@current_user.name}", class: 'form-control'
+      = f.label :tel
+      = f.text_field :tel,:placeholder => "#{@current_user.tel}", class: 'form-control'
       = f.submit "送信する", class:"btn btn-primary"

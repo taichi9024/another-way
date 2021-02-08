@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
   def create
     Like.create(user_id: current_user.id, space_id: params[:space_id])
     redirect_to space_path(params[:space_id]), notice: 'お気に入り登録しました'

@@ -1,8 +1,19 @@
 %h1.text-center anther way 管理画面
 
-= link_to "ユーザー検索", admin_user_path, class:"btn btn-danger"
-= link_to "トランザクション一覧", admin_payment_path, class:"btn btn-success"
-= link_to "スペース検索", admin_space_path, class:"btn btn-warning"
-%br
-= link_to "コメント一覧", admin_comment_path, class:"btn btn-info"
-= link_to "フィードバック一覧", admin_fb_path, class:"btn btn-secondary"
+.mx-auto.mt-4{:style => "width: 800px"}
+  = link_to "ユーザー検索", admin_user_path, class:"btn btn-info"
+  = link_to "トランザクション一覧", admin_payment_path, class:"btn btn-info"
+  = link_to "スペース検索", admin_space_path, class:"btn btn-info"
+  = link_to "コメント一覧", admin_comment_path, class:"btn btn-info"
+  = link_to "フィードバック一覧", admin_fb_path, class:"btn btn-info"
+
+%li.ml-5.mt-3.mb-3= link_to "githubページ", "https://github.com/taichi9024/aw", class:"text-link"
+
+
+.mx-auto{:style => "width: 200px"} 収益
+.mx-auto{:style => "width: 300px"}
+  - @payments.each do |pay|
+    +
+    = pay.price
+    = pay.created_at.strftime('%Y/%m/%d')
+    %br

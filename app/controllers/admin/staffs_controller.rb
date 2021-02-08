@@ -8,6 +8,8 @@ class Admin::StaffsController < ApplicationController
     if @staff
       session[:staff_id] = @staff.id
       redirect_to admin_dashboard_path, notice: "#{@staff.name}でログインしました"
+    else
+      render :new
     end
   end
 
@@ -20,6 +22,6 @@ class Admin::StaffsController < ApplicationController
   private
 
   def staff_params
-    params.require(:staff).permit(:name)
+    params.require(:staff).permit(:name, :password)
   end
 end
