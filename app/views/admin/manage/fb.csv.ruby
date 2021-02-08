@@ -1,13 +1,13 @@
 require 'csv'
-
-CSV.generate do |csv|
+bom = "\uFEFF"
+CSV.generate(bom) do |csv|
   column_names = %w(id email content)
   csv << column_names
-  @spaces.each do |space|
+  @feedbacks.each do |feedback|
     column_values = [
-      space.id,
-      space.email,
-      space.content
+      feedback.id,
+      feedback.email,
+      feedback.content
     ]
     csv << column_values
   end

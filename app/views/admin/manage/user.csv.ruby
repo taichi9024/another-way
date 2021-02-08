@@ -1,6 +1,7 @@
 require 'csv'
+bom = "\uFEFF"
 
-CSV.generate do |csv|
+CSV.generate(bom) do |csv|
   column_names = %w(id email name created_at)
   csv << column_names
   @users.each do |user|

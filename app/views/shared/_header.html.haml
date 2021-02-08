@@ -1,5 +1,5 @@
 .d-flex.bd-highlight.mb-5.pt-3.pb-3.bg-light
-  .mr-auto.p-2.bd-highlight= link_to "another way", root_path
+  .mr-auto.p-2.bd-highlight= link_to "another way", spaces_path
   - if user_signed_in?
     .p-2.bd-highlight= link_to 'ログアウト', logout_path, method: :delete, class: "mr-4"
     .p-2.bd-highlight= link_to 'アカウント', "/user/#{current_user.id}/", class: "mr-4"

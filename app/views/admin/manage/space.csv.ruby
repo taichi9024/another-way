@@ -1,6 +1,7 @@
 require 'csv'
+bom = "\uFEFF"
 
-CSV.generate do |csv|
+CSV.generate(bom) do |csv|
   column_names = %w(id name user.name tel price)
   csv << column_names
   @spaces.each do |space|
