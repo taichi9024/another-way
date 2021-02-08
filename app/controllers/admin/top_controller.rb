@@ -4,6 +4,8 @@ class Admin::TopController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
+    @q = Space.all.ransack(params[:q])
+    @spaces = @q.result(distinct: true).page(params[:page]).per(10)
   end
 
   def basic_auth

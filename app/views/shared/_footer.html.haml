@@ -1,2 +1,6 @@
-%p.mt-5 footer text
-= debug(params)
+= link_to 'Twitter', "https://twitter.com/share?url=#{request.url}/&text=another wayを広めよう！", title: 'Twitter', target: '_blank'
+
+<div class="line-it-button" data-lang="ja" data-type="share-a" data-ver="3" data-url="http://localhost:3000/spaces" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
+<script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+
+=debug(params)

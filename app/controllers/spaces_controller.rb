@@ -36,7 +36,7 @@ class SpacesController < ApplicationController
   def destroy
     @space = Space.find_by(id: params[:id])
     @space.delete
-    redirect_to spaces_path
+    redirect_to spaces_path, danger:"スペースを削除しました"
   end
   
   private

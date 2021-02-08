@@ -14,7 +14,7 @@
             = link_to "パスワードを忘れた場合", new_user_password_path
         = f.password_field :password, autocomplete: "current-password"
       .box-login
-        = f.submit "ログイン"
+        = f.submit "送信する", data: { disable_with: "送信中..." } ,class:"btn btn-primary"
         .legal-text
           続行することで、Hogezonの
           \#{link_to "利用規約", "#"}

@@ -21,5 +21,5 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
-    = f.submit "Sign up"
+    = f.submit "送信する", data: { disable_with: "送信中..." }
 = render "users/shared/links"

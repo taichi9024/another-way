@@ -49,3 +49,13 @@ actionmailer
 
 決済
 payjp　
+
+csvダウンロード
+ci/cd github action                                
+
+twiterシェア機能　                      
+lineシェア機能
+
+basic認証                                    
+
+ujs disable with data       
