@@ -1,5 +1,3 @@
 module ApplicationHelper
-    def title_maker
-    end
-
+  def title_maker; end
 end

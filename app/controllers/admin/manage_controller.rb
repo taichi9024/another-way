@@ -4,7 +4,7 @@ class Admin::ManageController < ApplicationController
     @users = User.page(params[:page]).per(PER)
     respond_to do |format|
       format.html do
-      end 
+      end
       format.csv do
       end
     end
@@ -14,7 +14,7 @@ class Admin::ManageController < ApplicationController
     @payments = Payment.page(params[:page]).per(PER)
     respond_to do |format|
       format.html do
-      end 
+      end
       format.csv do
       end
     end
@@ -24,7 +24,7 @@ class Admin::ManageController < ApplicationController
     @spaces = Space.page(params[:page]).per(PER)
     respond_to do |format|
       format.html do
-      end 
+      end
       format.csv do
       end
     end
@@ -34,7 +34,7 @@ class Admin::ManageController < ApplicationController
     @comments = Comment.page(params[:page]).per(PER)
     respond_to do |format|
       format.html do
-      end 
+      end
       format.csv do
       end
     end
@@ -44,10 +44,9 @@ class Admin::ManageController < ApplicationController
     @feedbacks = Feedback.page(params[:page]).per(PER)
     respond_to do |format|
       format.html do
-      end 
+      end
       format.csv do
       end
     end
   end
-
 end

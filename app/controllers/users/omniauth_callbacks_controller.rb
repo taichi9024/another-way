@@ -19,7 +19,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def callback_from(provider)
     provider = provider.to_s
-    @user = User.find_of_create(request.env["omniauth.auth"])
+    @user = User.find_or_create(request.env['omniauth.auth'])
 
     if @user.persisted?
       flash.notice = "#{provider}アカウントでログインできました"

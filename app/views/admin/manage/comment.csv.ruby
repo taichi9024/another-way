@@ -2,7 +2,7 @@ require 'csv'
 bom = "\uFEFF"
 
 CSV.generate(bom) do |csv|
-  column_names = %w(id user.name space.name content)
+  column_names = %w[id user.name space.name content]
   csv << column_names
   @comments.each do |comment|
     column_values = [

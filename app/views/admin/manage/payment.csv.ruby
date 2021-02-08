@@ -2,7 +2,7 @@ require 'csv'
 bom = "\uFEFF"
 
 CSV.generate(bom) do |csv|
-  column_names = %w(id user.name owner price placename)
+  column_names = %w[id user.name owner price placename]
   csv << column_names
   @payments.each do |pay|
     column_values = [

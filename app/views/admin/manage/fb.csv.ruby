@@ -1,7 +1,7 @@
 require 'csv'
 bom = "\uFEFF"
 CSV.generate(bom) do |csv|
-  column_names = %w(id email content)
+  column_names = %w[id email content]
   csv << column_names
   @feedbacks.each do |feedback|
     column_values = [

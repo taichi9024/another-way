@@ -1,26 +1,27 @@
-<h2 class="ml-5">スペース検索ページ</h2>
+<h2 class="ml-5 mt-2 text-primary">スペース一覧</h2>
 <div class="wrapper">
     <div id='map' class="ml-5"></div>
     <div class="ml-5">
-    <h3 class="text-center mb-2">物件一覧</h3>
+    <div class="right ml-5">
+      <h3 class="text-center mb-2">物件一覧</h3>
 
-    <%= search_form_for @q do |f| %>
-      <div class="form-group">
-      <%= f.label :city_cont, "市町村を検索してください",class:"form-control" %>
-      <%= f.search_field :city_cont, class:"form-control" %>
-      <%= f.submit "検索する", class:"btn btn-primary mb-5" %>
-      </div>
-    <% end %>
+      <%= search_form_for @q do |f| %>
+        <div class="form-group">
+        <%= f.label :city_cont, "市町村を検索してください",class:"form-control" %>
+        <%= f.search_field :city_cont, class:"form-control" %>
+        <%= f.submit "検索する", class:"btn btn-primary mb-5" %>
+        </div>
+      <% end %>
 
-    <%= paginate @spaces %>
-    <% @spaces.each do |space| %>
-      <p>名前: <%= link_to space.name, space_path(space) %></p>
-      <p>価格: <%= space.price %></p>
-      <p>最寄駅: <%= space.station %></p>
-    <% end %>
+      <%= paginate @spaces %>
+      <% @spaces.each do |space| %>
+        <p>名前: <%= link_to space.name, space_path(space) %></p>
+        <p>価格: <%= space.price %></p>
+        <p>最寄駅: <%= space.station %></p>
+      <% end %>
 
-        <%= paginate @spaces %>
-  
+          <%= paginate @spaces %>
+    </div>
     </div>
 </div>
 <style>

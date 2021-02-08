@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
@@ -7,13 +7,13 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => 'smtp.gmail.com',
-    :port => '587',
-    :domain => 'smtp.gmail.com',
-    :authentication => 'plain',
-    :user_name => 'spacee.staff10@gmail.com',
-    :password => ENV["GOOGLE_MAIL"]
+    enable_starttls_auto: true,
+    address: 'smtp.gmail.com',
+    port: '587',
+    domain: 'smtp.gmail.com',
+    authentication: 'plain',
+    user_name: 'spacee.staff10@gmail.com',
+    password: ENV['GOOGLE_MAIL']
   }
   # Settings specified here will take precedence over those in config/application.rb.
 

@@ -62,6 +62,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ast (2.4.2)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.1)
@@ -195,6 +196,9 @@ GEM
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
     orm_adapter (0.5.0)
+    parallel (1.20.1)
+    parser (3.0.0.0)
+      ast (~> 2.4.1)
     payjp (0.0.7)
       rest-client (~> 2.0)
     public_suffix (4.0.6)
@@ -237,6 +241,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (~> 1.0)
+    rainbow (3.0.0)
     rake (13.0.3)
     ransack (2.4.2)
       activerecord (>= 5.2.4)
@@ -254,6 +259,19 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rexml (3.2.4)
+    rubocop (1.9.1)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.2.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.4.1)
+      parser (>= 2.7.1.5)
+    ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.4)
     ruby_parser (3.15.1)
       sexp_processor (~> 4.9)
@@ -293,6 +311,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
+    unicode-display_width (2.0.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -345,6 +364,7 @@ DEPENDENCIES
   rails (~> 6.1.1)
   rails-i18n
   ransack
+  rubocop
   sass-rails (>= 6)
   selenium-webdriver
   spring

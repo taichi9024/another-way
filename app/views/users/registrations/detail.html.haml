@@ -1,23 +1,54 @@
+%div.flex.ml-5
+  %table.table
+    %thead
+      %tr
+        %th{:scope => "col"} 利用者名
+        %th{:scope => "col"}= @user.name
+
+    %tbody
+      %tr
+        %th{:scope => "row"} 利用者ID
+        %td= @user.id
+      
+      %tr
+        %th{:scope => "row"} メール
+        %td= @user.name if @user.uid
+      
+      %tr
+        %th{:scope => "row"} 登録日
+        %td= @user.created_at
+      
+      %tr
+        %th{:scope => "row"} 電話番号
+        %td= "#"
+
+      %tr
+        %th{:scope => "row"} パスワード
+        %td= @user.password 
+        
+
+      %tr
+        %th{:scope => "row"} 登録日
+        %td= @user.created_at
+
 
 %h2 予約一覧
 %table.table.table-striped.table-dark
   %thead
     %tr
-      %th{:scope => "col"} #
-      %th{:scope => "col"} name
-      %th{:scope => "col"} place
+      %th{:scope => "col"} 物件名
+      %th{:scope => "col"} 価格
       %th{:scope => "col"} created_at
-      %th{:scope => "col"} 確認する
+      %th{:scope => "col"} オーナー名
+
 
   %tbody
     - @payments.each do |pay|
       %tr
-        %th{:scope => "row"}= pay.id
         %td= pay.placename
         %td= pay.price
         %td= pay.created_at
-        %td= pay.id
+        %td= pay.owner
 
-
-
-= link_to "アプリの評価をする",  new_feedback_path, class:"btn btn-success"
+%div
+  = link_to "アプリの評価をする",  new_feedback_path, class:"btn btn-primary"

@@ -7,7 +7,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(feedback_params)
     if @feedback.save
       FeedbackMailer.feedback_send(@feedback).deliver_now!
-      redirect_to root_path,notice:"フィードバックいただきありがとうございます！"
+      redirect_to root_path, notice: 'フィードバックいただきありがとうございます！'
     end
   end
 

@@ -1,13 +1,9 @@
 - content_for(:title, @space.name)
 %h1.text-center= @space.name
 
-%p.text-center
+%p.ml-5
   = link_to  @space.pref , "#"
   ＞#{link_to @space.station, "#"}＞#{link_to  @space.name, "#"}
-
-- if current_user == @space.user
-  =link_to "情報を更新する", edit_space_path(@space), class:"btn btn-success"
-  =link_to "掲載を削除する", space_path(@space),method: :delete,  class:"btn btn-danger",data:{confirm:"この掲載を削除しますよろしいですか？"}
 
 %div.flex.ml-5
   %table.table
@@ -35,7 +31,7 @@
 
       %tr
         %th{:scope => "row"} 駅から徒歩
-        %td= @station_walk.to_i
+        %td= @station_walk
 
       %tr
         %th{:scope => "row"} 説明
@@ -45,16 +41,21 @@
         %th{:scope => "row"} 登録日
         %td= @space.created_at
 
-%h1.text-center 決済ページ
-=link_to "決済する",new_space_payment_path(@space),class:"btn btn-success ml-5"
+- if current_user == @space.user
+  =link_to "情報を更新する", edit_space_path(@space), class:"btn btn-primary ml-5"
+  =link_to "掲載を削除する", space_path(@space),method: :delete,  class:"btn btn-danger ml-2",data:{confirm:"この掲載を削除しますよろしいですか？"}
+
+
+%h4.text-center 
+  =link_to "予約する",new_space_payment_path(@space),class:"btn btn-primary ml-5"
 
 %div.mt-5.ml-5
   %h6 お気に入り登録
   %h5 お気に入り数"#{@likes.count.to_i}"
   - if current_user.likes.where(space_id: params[:id]).first
-    =link_to "お気に入り解除", space_like_path(@space), method: :delete ,class:"btn btn-primary" , data:{confirm: "お気に入り登録を解除しても良いですか？"}
+    =link_to "お気に入り解除", space_like_path(@space), method: :delete ,class:"btn btn-danger" , data:{confirm: "お気に入り登録を解除しても良いですか？"}
   - else 
-    =link_to "お気に入り", space_likes_path(@space),method: :post, class:"btn btn-danger"
+    =link_to "お気に入り", space_likes_path(@space),method: :post, class:"btn btn-primary"
 
 %div.mt-5.ml-5
   %h4 コメント

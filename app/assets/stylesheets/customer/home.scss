@@ -2,3 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+#top-space {
+    margin-top: 200px;
+}
+.main-container {
+    background-image: url("top.jpeg");
+    opacity: 0.8;
+    height: 800px;
+    background-size: cover;
+  }
