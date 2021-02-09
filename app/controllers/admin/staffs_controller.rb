@@ -1,4 +1,5 @@
-class Admin::StaffsController < ApplicationController
+class Admin::StaffsController < Admin::Base
+  skip_before_action :login_first
   def new
     @staff = Staff.new
   end

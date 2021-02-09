@@ -1,64 +1,59 @@
-# README
+another wayはコワーキングスペースのマッチングサイトとなっている。
+現在コロナの影響で相次いで飲食店が倒産している。私の地元の行きつけの飲食店も店を畳んだ。。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+居酒屋の昼間の空席を見て、この使われていない席をコワーキングスペースとして貸し出すことができれば追加投資なしで新たな収入源が作れるのではと思ったのがアプリ作成の動機である。
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-記法                                                 
+以下機能,仕様を列挙していく
+１記法                            
 haml
 
+２ログイン機能
 devise                                  
 
-omniauth使ったログイン実装         
+3 SNSを使ったログイン       
 facebook google github
                                     
-投稿機能
-CRUD　　　　　　　　　　　　　   
-google gmap導入                                
+4 CRUD機能
+投稿の作成、更新、削除機能
+　　　　　　　　　　   
+5 google-mapの導入                                
 
-検索機能
-ランサック                                      
-kaminari                                         
-seedfu
+6 検索機能
 
-db
-コメント機能                                  
-いいね機能                                      
+7 ページネーション
 
-メール機能
-actionmailer          
+8 データベース関係
+コメント機能                            
+お気に入り機能
 
-決済
-payjp　
+9 メール送信機能
+actionmailer        
 
-csvダウンロード
-ci/cd github action                                
+10 payjpを使った決済機能
 
+11 admin画面の作成
+csvダウンロード機能
+
+12 ci/cd 
+github action                                
+
+13 snsシェア機能
 twiterシェア機能　                      
 lineシェア機能
 
-basic認証                                    
+14 basic認証                                    
 
-ujs disable with data       
+15 エラーページ自作  
 
-エラーハンドリング    
-i18n日本語に対応  
+16 i18nを使って日本語に対応  
+
+* Ruby version
+2.6.6
+
+* Database initialization
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+
+* How to run the test suite
+$ bundle exec rake spec

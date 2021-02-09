@@ -1,4 +1,6 @@
-class Admin::ManageController < ApplicationController
+class Admin::ManageController < Admin::Base
+  before_action :login_first
+
   PER = 10
   def user
     @users = User.page(params[:page]).per(PER)

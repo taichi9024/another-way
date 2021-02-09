@@ -1,4 +1,5 @@
-class Admin::TopController < ApplicationController
+class Admin::TopController < Admin::Base
+  before_action :login_first
   before_action :basic_auth
   protect_from_forgery with: :exception
 
