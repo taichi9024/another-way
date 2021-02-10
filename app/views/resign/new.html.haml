@@ -1,0 +1,5 @@
+%h2.text-center 退会ページ
+
+%p.mt-3 退会した場合全てのデータが削除されます
+
+= link_to "退会する",goodbye_path, method: :post, data:{confirm:"本当に退会しますか？"},class:"btn btn-danger"

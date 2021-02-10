@@ -14,20 +14,24 @@
       <% end %>
 
       <%= paginate @spaces %>
+      <ul class="list-group all-space">
       <% @spaces.each do |space| %>
+       <div class="list-group-item one-space list-group-item-action mb-2">
         <p>名前: <%= link_to space.name, space_path(space) %></p>
         <p>価格: <%= space.price %></p>
         <p>最寄駅: <%= space.station %></p>
+        </div>
       <% end %>
+      </ul>
 
-          <%= paginate @spaces %>
+      <%= paginate @spaces %>
     </div>
     </div>
 </div>
 <style>
 #map{
   height: 500px;
-  width: 800px;
+  width: 700px;
 }
 </style>
 <script>

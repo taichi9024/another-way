@@ -3,6 +3,13 @@ ja:
     models:
       space: スペース 
     attributes:
-      space: スペース
       name: 物件名
+      pref: 都道府県
+      city: 都市名
+      detailaddress: 詳細な住所
+      tel: 電話番号
+      station: 最寄駅
+      station_walk: 駅まで徒歩
+      description: 詳細な説明
       price: 価格
+      seat: 席数

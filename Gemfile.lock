@@ -335,6 +335,9 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (2.0.0)
+    valid_email2 (3.6.0)
+      activemodel (>= 3.2)
+      mail (~> 2.5)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -397,6 +400,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
+  valid_email2
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)

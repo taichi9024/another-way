@@ -1,9 +1,7 @@
-%h1.text-center ユーザー情報の更新
+%h3.text-center ユーザー情報の更新
 .row
   .col-md-6.col-md-offset-3.ml-5
     = form_with(model: @user,method: :patch, url:"/profs/#{@current_user.id}",local: true) do |f|
-      = f.label :email
-      = f.text_field :email,:placeholder => "#{@current_user.email}", class: 'form-control'
       = f.label :name
       = f.text_field :name,:placeholder => "#{@current_user.name}", class: 'form-control'
       = f.label :tel

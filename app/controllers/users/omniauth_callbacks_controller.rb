@@ -18,16 +18,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def callback_from(provider)
-    provider = provider.to_s
-    @user = User.find_or_create(request.env['omniauth.auth'])
-
-    if @user.persisted?
-      flash.notice = "#{provider}アカウントでログインできました"
-      sign_in_and_redirect @user
-    else
-      session["devise.#{provider}_data"] = request.env['omniauth.auth']
-      redirect_to new_user_registration_url
-    end
+    @user = User.find_or_create_from_auth_hash!(request.env['omniauth.auth'])
+    flash.notice = "#{provider}アカウントでログインできました"
+    sign_in_and_redirect @user
   end
 
   # More info at:

@@ -4,5 +4,4 @@ class Like < ApplicationRecord
 
   validates :user_id, presence: true, numericality: true
   validates :space_id, presence: true, numericality: true
-
 end

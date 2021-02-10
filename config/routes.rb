@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-
   root 'home#index'
-  
+
   namespace :admin do
     root 'staffs#new'
     get 'dashboard', to: 'top#index'
@@ -16,11 +15,10 @@ Rails.application.routes.draw do
     get 'fb', to: 'manage#fb'
   end
 
-
   resources :spaces do
-    resources :comments, except:[:edit, :update]
-    resources :likes, except:[:edit, :update]
-    resources :payments, except:[:edit, :update]
+    resources :comments, except: %i[edit update]
+    resources :likes, except: %i[edit update]
+    resources :payments, except: %i[edit update]
   end
 
   resources :feedbacks
@@ -34,9 +32,12 @@ Rails.application.routes.draw do
     get 'signup', to: 'users/registrations#new'
     get 'login', to: 'users/sessions#new'
     delete 'logout', to: 'users/sessions#destroy'
-    resources :profs, only:[:edit, :update]
+    resources :profs, only: %i[edit update]
   end
-  get "likes", to: "likes#index"
+  get 'resign', to: 'resign#new'
+  post 'goodbye', to: 'resign#create'
+
+  get 'likes', to: 'likes#index'
   get '*path', controller: 'application', action: 'e404'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

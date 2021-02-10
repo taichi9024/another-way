@@ -1,5 +1,5 @@
 .d-flex.bd-highlight.pt-3.pb-3.bg-light
-  .mr-auto.p-2.bd-highlight.ml-5= link_to "another way", spaces_path
+  .mr-auto.p-2.bd-highlight.ml-5.h2= link_to "another way", spaces_path
   - if user_signed_in?
     .p-2.bd-highlight= link_to 'ログアウト', logout_path, method: :delete, class: "mr-4"
     .p-2.bd-highlight= link_to 'お気に入り', likes_path, class: "mr-4"

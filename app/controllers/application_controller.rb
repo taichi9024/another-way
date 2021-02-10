@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   layout :set_layout
 
   helper_method :page_title
+  before_action :authenticate_user!
 
   class Forbidden < ActionController::ActionControllerError; end
 

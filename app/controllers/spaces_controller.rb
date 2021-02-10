@@ -1,12 +1,17 @@
 class SpacesController < ApplicationController
-  before_action :authenticate_user!, except:[:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
   def new
     @space = Space.new
   end
 
   def create
     @space = current_user.spaces.build(space_params)
-    redirect_to @space, notice: 'スペースを掲載しました' if @space.save
+    if @space.save
+      redirect_to @space, notice: 'スペースを掲載しました'
+    else
+      flash.alert = "スペース掲載できませんでした"
+      render :new
+    end
   end
 
   def index
@@ -26,19 +31,24 @@ class SpacesController < ApplicationController
 
   def update
     @space = Space.find_by(id: params[:id])
-    redirect_to @space, notice: 'スペースの情報を更新しました' if @space.update(space_params)
+    if @space.update(space_params)
+      redirect_to @space, notice: 'スペースの情報を更新しました'
+    else
+      flash.alert = "情報を更新できませんでした"
+      render :edit
+    end
   end
 
   def destroy
     @space = Space.find_by(id: params[:id])
     @space.delete
-    redirect_to spaces_path, danger: 'スペースを削除しました'
+    redirect_to spaces_path, alert: 'スペースを削除しました'
   end
 
   private
 
   def space_params
     params.require(:space).permit(:name, :pref, :city, :detailaddress, :tel, :station, :station_walk, :description,
-                                  :price)
+                                  :price, :seat)
   end
 end

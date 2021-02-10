@@ -5,51 +5,56 @@
   = link_to  @space.pref , "#"
   ＞#{link_to @space.station, "#"}＞#{link_to  @space.name, "#"}
 
-%div.flex.ml-5
-  %table.table
-    %thead
-      %tr
-        %th{:scope => "col"} #
-        %th{:scope => "col"}= @space.name
-
-    %tbody
-      %tr
-        %th{:scope => "row"} 都道府県
-        %td= @space.pref
-      
-      %tr
-        %th{:scope => "row"} 価格
-        %td= @space.price.to_i
-
-      %tr
-        %th{:scope => "row"} 住所
-        %td= @space.city
-
-      %tr
-        %th{:scope => "row"} 最寄駅
-        %td= @space.station
-
-      %tr
-        %th{:scope => "row"} 駅から徒歩
-        %td= @space.station_walk
-
-      %tr
-        %th{:scope => "row"} 説明
-        %td= @space.description
-
-      %tr
-        %th{:scope => "row"} 登録日
-        %td= @space.created_at.strftime('%Y/%m/%d')
+.card.mb-2
+  %h5.card-header スペース名
+  .card-body
+    %p.card-text= @space.name
+.card.mb-2
+  %h5.card-header 都道府県
+  .card-body
+    %p.card-text= @space.pref
+.card.mb-2
+  %h5.card-header 都市名
+  .card-body
+    %p.card-text= @space.city
+.card.mb-2
+  %h5.card-header 詳細な住所
+  .card-body
+    %p.card-text= @space.detailaddress
+.card.mb-2
+  %h5.card-header 価格
+  .card-body
+    %p.card-text= @space.price
+.card.mb-2
+  %h5.card-header シート数
+  .card-body
+    %p.card-text= @space.seat
+.card.mb-2
+  %h5.card-header 電話番号
+  .card-body
+    %p.card-text= @space.tel
+.card.mb-2
+  %h5.card-header 最寄駅 
+  .card-body
+    %p.card-text= @space.station
+.card.mb-2
+  %h5.card-header 駅まで徒歩 
+  .card-body
+    %p.card-text= @space.station_walk
+.card.mb-2
+  %h5.card-header 詳細な説明
+  .card-body
+    %p.card-text= @space.description
 
 - if current_user == @space.user 
-  =link_to "情報を更新する", edit_space_path(@space), class:"btn btn-primary ml-5"
+  =link_to "情報を更新する", edit_space_path(@space), class:"btn btn-primary"
   =link_to "掲載を削除する", space_path(@space),method: :delete,  class:"btn btn-danger ml-2",data:{confirm:"この掲載を削除しますよろしいですか？"}
 
 
 %h4.text-center 
-  =link_to "予約する",new_space_payment_path(@space),class:"btn btn-primary ml-5"
+  =link_to "予約する",new_space_payment_path(@space),class:"btn btn-primary"
 
-%div.mt-5.ml-5
+%div.mt-5
   %h5 お気に入り数 #{@likes.count}
   - if current_user
     - if current_user.likes.where(space_id: params[:id]).first
@@ -57,7 +62,7 @@
     - else 
       =link_to "お気に入り", space_likes_path(@space),method: :post, class:"btn btn-primary"
 
-%div.mt-5.ml-5
+%div.mt-5
   %h4 コメント
 
   .row
@@ -66,7 +71,7 @@
         = f.text_field :content,placeholder: "コメントを入力する", class: 'form-control'
         = f.submit class:"btn btn-primary"
 
-%div.mb-4.mt-3.ml-5
+%div.mb-4.mt-3
   - @comments.each do |comment|
     %h5= comment.content
     %h6= comment.user.name

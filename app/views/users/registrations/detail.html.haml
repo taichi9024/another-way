@@ -1,46 +1,31 @@
-%div.flex.ml-5
-  %table.table
-    %thead
-      %tr
-        %th{:scope => "col"} 利用者名
-        %th{:scope => "col"}= @user.name
+.card.mb-2
+  %h5.card-header 利用者ID
+  .card-body
+    %p.card-text= @user.id
+.card.mb-2
+  %h5.card-header 利用者名
+  .card-body
+    %p.card-text= @user.name
+.card.mb-2
+  %h5.card-header 電話番号
+  .card-body
+    %p.card-text= @user.tel if @user.tel
+.card.mb-2
+  %h5.card-header 登録日
+  .card-body
+    %p.card-text= @user.created_at.strftime('%Y/%m/%d')
 
-    %tbody
-      %tr
-        %th{:scope => "row"} 利用者ID
-        %td= @user.id
-      
-      %tr
-        %th{:scope => "row"} メール
-        %td= @user.name
-      
-      %tr
-        %th{:scope => "row"} 電話番号
-        %td= @user.tel
-        
-      %tr
-        %th{:scope => "row"} 登録日
-        %td= @user.created_at.strftime('%Y/%m/%d')
-= link_to "編集する", edit_prof_path(@user),class:"btn btn-primary ml-5"
-
+= link_to "編集する", edit_prof_path(@user),class:"btn btn-primary"
 
 %h4.text-center.mt-5 予約一覧
-%table.table.ml-5
-  %thead
-    %tr
-      %th{:scope => "col"} 物件名
-      %th{:scope => "col"} 価格
-      %th{:scope => "col"} 予約確定日
-      %th{:scope => "col"} オーナー名
-
-
-  %tbody
-    - @payments.each do |pay|
-      %tr
-        %td= pay.placename
-        %td= pay.price
-        %td= pay.created_at.strftime('%Y/%m/%d')
-        %td= pay.owner
+%ul.list-group.all-book
+  - @payments.each do |pay|
+    .list-group-item.one-book.list-group-item-action.mb-2
+      %p
+        名前: #{pay.placename}
+      %p
+        価格: #{pay.price}
 
 %div
-  = link_to "アプリの評価をする",  new_feedback_path, class:"btn btn-primary ml-5 mt-5"
+  = link_to "アプリの評価をする",  new_feedback_path, class:"btn btn-primary mt-5"
+  = link_to "退会する",  resign_path, class:"btn btn-danger ml-1 mt-5"

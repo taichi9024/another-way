@@ -2,12 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.top-title{
+    margin-top: 20px;
+}
+
 #top-space {
-    margin-top: 200px;
+    margin-top: 150px;
 }
 .main-container {
     background-image: url("top.jpeg");
     opacity: 0.8;
     height: 800px;
     background-size: cover;
-  }
+}
+.footer-text{
+    text-align: right;
+}

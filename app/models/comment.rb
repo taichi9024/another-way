@@ -4,6 +4,5 @@ class Comment < ApplicationRecord
 
   validates :user_id, presence: true, numericality: true
   validates :space_id, presence: true, numericality: true
-  validates :content, presence: true, length:{minimum:5}
-
+  validates :content, presence: true, length: { minimum: 10 }
 end
