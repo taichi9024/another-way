@@ -1,9 +1,13 @@
-- content_for(:title, '決済ページ')
-<h1 class="text-center">決済ページ</h1>
+<div class="text-center">
+<h3>決済ページ</h3>
 　　<%= form_with(model: @payment,url:space_payments_path(params[:space_id]), method: :post, local: true) do %>
   <script type="text/javascript"
     src="https://checkout.pay.jp"
     class="payjp-button"
-    data-key="pk_test_df4f7a6e3cf1620e7f76e5f2" >
+    data-key=<%= ENV["PAYJP_PUB"] %> >
   </script>
+<% end %>
+</div>
+<% if @set_book %>
+  <%= link_to "取引を中止する", space_payment_path(params[:space_id], @set_book.id), method: :delete %> 
 <% end %>

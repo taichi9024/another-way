@@ -14,10 +14,10 @@
     = f.text_field :pref, class: 'form-control'
   .form-group  
     = f.label :city,"都市名を入力してください"
-    = f.text_field :city,placeholder: "例）目黒区", class: 'form-control'
+    = f.text_field :city,placeholder: "例）目黒区1丁目1-1", class: 'form-control'
   .form-group
-    = f.label :detailaddress,"番地以下を入力してください"
-    = f.text_field :detailaddress,placeholder: "例）1丁目 1-1 101号室", class: 'form-control'
+    = f.label :detailaddress,"建物名以下を入力してください"
+    = f.text_field :detailaddress,placeholder: "例) ooビル", class: 'form-control'
   .form-group
     = f.label :tel,"電話番号を入力してください"
     = f.text_field :tel,placeholder: "例）090111111", class: 'form-control'
@@ -33,4 +33,7 @@
   .form-group
     = f.label :description,"詳細な説明を入力してください"
     = f.text_area :description, class: 'form-control',row:30, col:10
+  .form-group
+    = f.label :image
+    = f.file_field :image
   = f.submit "登録する", data: { disable_with: "送信中..." } ,class:"btn btn-primary"

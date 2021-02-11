@@ -9,7 +9,7 @@ module ErrorHandle
   end
 
   def e403(e)
-    @exception  = e
+    @exception = e
     render 'errors/e403'
   end
 

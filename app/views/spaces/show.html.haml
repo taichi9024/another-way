@@ -45,14 +45,32 @@
   %h5.card-header 詳細な説明
   .card-body
     %p.card-text= @space.description
+.card.mb-2
+  %h5.card-header イメージ
+  .card-body
+  - if @space.image.attached? 
+    %p.card-text.text-center= image_tag @space.image.variant(resize_to_fit:[700, 700])
 
 - if current_user == @space.user 
   =link_to "情報を更新する", edit_space_path(@space), class:"btn btn-primary"
   =link_to "掲載を削除する", space_path(@space),method: :delete,  class:"btn btn-danger ml-2",data:{confirm:"この掲載を削除しますよろしいですか？"}
 
 
-%h4.text-center 
-  =link_to "予約する",new_space_payment_path(@space),class:"btn btn-primary"
+%h4.text-center.mt-2 予約する
+= form_with(model: @book,url:space_booking_path(@space),method: :post, local: true, class:"form-horizontal") do |f|
+  .form-group
+    = f.label :bookdate, "ご利用したい時間を入力して下さい　＊当日予約のみ"
+    = f.text_field :bookdate,placeholder:"例) 14:00", class: 'form-control'
+  .form-group
+    = f.label :bookdate, "何時間ご利用したいか入力して下さい"
+    = f.text_field :hours,placeholder:"例) 2", class: 'form-control'
+  .form-group
+    = f.label :seatnum, "予約するシート数を入力して下さい"
+    = f.text_field :seatnum, class: 'form-control'
+    = f.submit "予約する", class:"btn btn-primary"
+
+
+
 
 %div.mt-5
   %h5 お気に入り数 #{@likes.count}
@@ -76,6 +94,3 @@
     %h5= comment.content
     %h6= comment.user.name
     = comment.created_at.strftime('%Y/%m/%d')
-
-
-  

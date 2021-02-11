@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'active_storage_validations'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'devise-bootstrap-views'
@@ -11,6 +12,7 @@ gem 'devise-i18n-views'
 gem 'dotenv-rails'
 gem 'geocoder'
 gem 'haml-rails'
+gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'
 gem 'kaminari'
 gem 'omniauth', '1.9.1'
@@ -28,11 +30,9 @@ gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
 gem 'valid_email2'
 gem 'webpacker', '~> 5.0'
+
 # Use Redis adapter to run
 # gem 'redis', '~> 4.0'
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

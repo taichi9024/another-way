@@ -9,7 +9,16 @@
     }
 .all-space{
     border-radius: 10px;
+    display: flex;
 }
 .one-space{
     background-color: aquamarine;
+}
+.right{
+    width:500px
+}
+
+#map{
+  height: 600px;
+  width: 850px;
 }

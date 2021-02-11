@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :comments, except: %i[edit update]
     resources :likes, except: %i[edit update]
     resources :payments, except: %i[edit update]
+    post "booking", to: "payments#book_create"
   end
 
   resources :feedbacks
@@ -36,9 +37,7 @@ Rails.application.routes.draw do
   end
   get 'resign', to: 'resign#new'
   post 'goodbye', to: 'resign#create'
-
   get 'likes', to: 'likes#index'
-  get '*path', controller: 'application', action: 'e404'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,7 @@
 class Admin::Base < ApplicationController
   helper_method :current_staff
   before_action :login_first
+  skip_before_action :authenticate_user!
 
   private
 

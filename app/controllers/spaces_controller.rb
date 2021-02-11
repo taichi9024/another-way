@@ -9,7 +9,7 @@ class SpacesController < ApplicationController
     if @space.save
       redirect_to @space, notice: 'スペースを掲載しました'
     else
-      flash.alert = "スペース掲載できませんでした"
+      flash.alert = 'スペース掲載できませんでした'
       render :new
     end
   end
@@ -34,7 +34,7 @@ class SpacesController < ApplicationController
     if @space.update(space_params)
       redirect_to @space, notice: 'スペースの情報を更新しました'
     else
-      flash.alert = "情報を更新できませんでした"
+      flash.alert = '情報を更新できませんでした'
       render :edit
     end
   end
@@ -49,6 +49,6 @@ class SpacesController < ApplicationController
 
   def space_params
     params.require(:space).permit(:name, :pref, :city, :detailaddress, :tel, :station, :station_walk, :description,
-                                  :price, :seat)
+                                  :price, :seat, :image)
   end
 end

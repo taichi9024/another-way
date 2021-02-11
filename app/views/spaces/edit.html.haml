@@ -1,4 +1,5 @@
 %h2.text-center.mt-2 スペース情報の更新
+
 = form_with(model: @space, local: true, class:"form-horizontal") do |f|
   - if @space.errors.any?
     = render 'application/errors', model: f.object
@@ -32,4 +33,8 @@
   .form-group
     = f.label :description,"詳細な説明を入力してください"
     = f.text_area :description, class: 'form-control',row:30, col:10
-  = f.submit "更新する", data: { disable_with: "送信中..." } ,class:"btn btn-primary"
+  .form-group
+  - if @space.image.attached?  
+    = image_tag @space.image.variant(resize_to_fit:[600, 600])
+    = f.file_field :image, class: 'form-control-file'
+    = f.submit "更新する", data: { disable_with: "更新中..." } ,class:"btn btn-primary"

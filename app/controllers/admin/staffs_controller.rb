@@ -5,10 +5,11 @@ class Admin::StaffsController < Admin::Base
   end
 
   def create
-    @staff = Staff.find_by(name: staff_params[:name])
-    if @staff
-      session[:staff_id] = @staff.id
-      redirect_to admin_dashboard_path, notice: "#{@staff.name}でログインしました"
+    @staff = Staff.new(staff_params)
+    staff = Staff.find_by(name: staff_params[:name])
+    if staff.name == @staff.name && BCrypt::Password.new(staff.password_digest) == @staff.password
+      session[:staff_id] = staff.id
+      redirect_to admin_dashboard_path, notice: "#{staff.name}でログインしました"
     else
       render :new
     end
