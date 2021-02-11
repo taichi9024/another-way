@@ -10,10 +10,11 @@
 %li.ml-5.mt-3.mb-3= link_to "githubページ", "https://github.com/taichi9024/aw", class:"text-link"
 
 
-.mx-auto{:style => "width: 200px"} 収益
+.mx-auto{:style => "width: 250px"} 収益
 .mx-auto{:style => "width: 300px"}
   - @payments.each do |pay|
+    = pay.created_at.strftime('%m/%d')
     +
-    = pay.price
-    = pay.created_at.strftime('%Y/%m/%d')
+    = pay.netincome
+
     %br

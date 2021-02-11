@@ -26,10 +26,13 @@ class PaymentsController < ApplicationController
     @book = Book.new
     price = @space.price
     pr,ho,se = price, params[:hours].to_i, params[:seatnum].to_i
-    @book = current_user.books.create!(bookdate: params[:bookdate],space_id: params[:space_id], hours: params[:hours],price: price,wholeprice: pr*ho*se, seatnum: params[:seatnum])
-    @space.update!(seat: @space.seat - params[:seatnum].to_i)
-    flash.notice = "決済画面に遷移しました"
-    redirect_to new_space_payment_path(params[:space_id])
+    if @space.seat > 0
+      @book = current_user.books.create!(bookdate: params[:bookdate],space_id: params[:space_id], hours: params[:hours],price: price,wholeprice: pr*ho*se, seatnum: params[:seatnum]) 
+      flash.notice = "決済画面に遷移しました"
+      render :new
+    else
+      redirect_to @space, alert:"シート数が確保できなかった為予約できませんでした"
+    end
   end
 
   def destroy

@@ -1,9 +1,13 @@
 class User < ApplicationRecord
-  has_many :spaces
-  has_many :comments
-  has_many :likes
-  has_many :payments
-  has_many :books
+  has_many :spaces, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :payments, dependent: :destroy
+  has_many :books, dependent: :destroy
+
+  after_destroy do
+    Rails.logger.info "ユーザーが退会しました　#{self.attribute}"
+  end
 
   validates :name, presence: true, length: { maximum: 20 }
 

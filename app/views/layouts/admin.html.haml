@@ -11,5 +11,12 @@
     = favicon_link_tag('favicon.JPG')
   %body
     = render "layouts/header"
+    - if notice
+      %p.alert.alert-success
+        = notice 
+    - if alert  
+      %p.alert.alert-danger
+        = alert
+    .container 
     = yield
     = render "layouts/footer"

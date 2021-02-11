@@ -1,5 +1,5 @@
 class Payment < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   before_save :price2netincome
 
   validates :user_id, presence: true, numericality: true

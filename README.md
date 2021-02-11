@@ -57,3 +57,11 @@ $ bundle exec rake db:migrate
 
 * How to run the test suite
 $ bundle exec rake spec
+
+
+今後実装したい機能
+より丁寧なレスポンシブに対応したUI
+決済周りをより堅牢にまた決済手段の拡充
+actioncableを使ったメッセージ機能
+googleカレンダーとの連携
+admin画面の充実
