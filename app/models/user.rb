@@ -10,6 +10,8 @@ class User < ApplicationRecord
   end
 
   validates :name, presence: true, length: { maximum: 20 }
+  validates :email, "valid_email_2/email": true
+  validates :tel, numericality: true 
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
