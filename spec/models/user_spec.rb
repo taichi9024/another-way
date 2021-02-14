@@ -27,12 +27,5 @@ RSpec.describe Staff do
             user.valid?
             expect(user.errors[:email]).to include("は不正な値です")
         end
-
-        example "telが文字列だとエラーが出る" do
-            user = User.new
-            user.tel = "hoge"
-            user.valid?
-            expect(user.errors[:tel]).to include("は数値で入力してください")
-        end
     end
 end
