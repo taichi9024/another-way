@@ -26,7 +26,7 @@
 1. facebook google githubといったSNSのアカウントでのログイン
 1. スペースの投稿、更新、削除機能
 1. google-map apiの導入                
-1. rspecでのテスト記述
+1. rspec factorybotでのテスト記述
 1. 検索機能
 1. コメント機能                            
 1. お気に入り機能
@@ -39,5 +39,5 @@
 1. 日本語に対応したUI
 1. basic認証機能
 1. ページネーション機能
-1.bootstrapでのフロント記述
+1. bootstrapでのフロント記述
 

@@ -2,7 +2,7 @@ module ErrorHandle
   extend ActiveSupport::Concern
 
   included do
-    #rescue_from StandardError,  with: :e500
+    # rescue_from StandardError,  with: :e500
     rescue_from ApplicationController::Forbidden, with: :e403
     rescue_from ApplicationController::IpAddressRejected, with: :e403
     rescue_from ActiveRecord::RecordNotFound, with: :e404

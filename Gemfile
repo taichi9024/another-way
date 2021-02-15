@@ -11,6 +11,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'dotenv-rails'
 gem 'geocoder'
+gem 'gon'
 gem 'haml-rails'
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'
@@ -30,7 +31,6 @@ gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
 gem 'valid_email2'
 gem 'webpacker', '~> 5.0'
-gem "gon"
 
 # Use Redis adapter to run
 # gem 'redis', '~> 4.0'
@@ -43,7 +43,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "brakeman"
+  gem 'brakeman'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.

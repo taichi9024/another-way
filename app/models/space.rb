@@ -15,8 +15,8 @@ class Space < ApplicationRecord
   validates :station_walk, presence: true, numericality: true
   validates :description, presence: true, length: { maximum: 200 }
   validates :user_id, presence: true, numericality: true
-  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 50} 
-  validates :seat, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0} 
+  validates :price, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 50 }
+  validates :seat, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :image,
             content_type: %i[png jpg jpeg],
             size: { less_than_or_equal_to: 10.megabytes }

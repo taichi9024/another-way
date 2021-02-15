@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   class Forbidden < ActionController::ActionControllerError; end
+
   class IpAddressRejected < ActionController::ActionControllerError; end
   include ErrorHandle
 

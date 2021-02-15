@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :comments, except: %i[edit update]
     resources :likes, except: %i[edit update]
     resources :payments, except: %i[edit update]
-    post "booking", to: "payments#book_create"
+    post 'booking', to: 'payments#book_create'
   end
 
   resources :feedbacks

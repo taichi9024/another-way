@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
 
   after_destroy do
-    Rails.logger.info "ユーザーが退会しました　#{self.attribute}"
+    Rails.logger.info "ユーザーが退会しました　#{attribute}"
   end
 
   validates :name, presence: true, length: { maximum: 20 }
