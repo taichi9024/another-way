@@ -1,6 +1,7 @@
 // Place all the styles related to the spaces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@media (min-width: 768px) {
 .wrapper{
     display: flex;
     }
@@ -17,8 +18,4 @@
 .right{
     width:500px
 }
-
-#map{
-  height: 600px;
-  width: 850px;
 }

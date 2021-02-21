@@ -2,12 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+  .header-title {
+    @media (min-width: 544px) {
+        font-size: 15px;
+      }
+    
+      @media (min-width: 768px) {
+      font-size: 25px;
+      }
+  
+    @media (min-width: 1280px) {
+      font-size: 30px;
+    }
+  }
 .top-title{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #top-space {
-    margin-top: 150px;
+    margin-top: 70px;
+}
+
+#sec-space {
+  margin-top: 70px;
 }
 .main-container {
     background-image: url("top.jpeg");
@@ -18,3 +36,4 @@
 .footer-text{
     text-align: right;
 }
+

@@ -1,7 +1,7 @@
 .box
   .box-inner
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      %h1 ログイン
+      %h2 ログイン
       .box-email
         = f.label :email, "Eメール"
         %br/
@@ -15,17 +15,11 @@
         = f.password_field :password, autocomplete: "current-password"
       .box-login
         = f.submit "送信する", data: { disable_with: "送信中..." } ,class:"btn btn-primary"
-        .legal-text
-          続行することで、another wayの
-          \#{link_to "利用規約", "#"}
-          および
-          \#{link_to "プライバシー規約", "#"}
-          に同意するものとみなされます。
         - if devise_mapping.rememberable?
           .remember
             = f.check_box :remember_me
             = f.label :remember, "ログインしたままにする"
-            .box-newusr
+            .box-newusr.pb-5
               %p
               = link_to "アカウントを作成", new_user_registration_path
               = link_to "facebookアカウントでログイン", user_facebook_omniauth_authorize_path
