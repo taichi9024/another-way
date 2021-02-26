@@ -30,6 +30,7 @@ gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'valid_email2'
 gem 'webpacker', '~> 5.0'
+gem 'bootstrap', '~> 5.0.0.beta1'
 
 # Use Redis adapter to run
 # gem 'redis', '~> 4.0'
