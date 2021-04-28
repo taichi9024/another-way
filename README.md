@@ -1,5 +1,6 @@
 # another way
 - another wayはコワーキングスペースのマッチングサイトとなっている。
+- https://anotherway.herokuapp.com/
 
 ## 動機
 - 現在新型コロナの影響で相次いで飲食店が倒産している。私の地元の行きつけの飲食店も店を畳んだ。。
