@@ -1,7 +1,7 @@
 # another way
 - another wayはコワーキングスペースのマッチングサイトとなっています。
 - https://anotherway.herokuapp.com/ 起動するまで少々時間がかかります。申し訳ございません。
-- テストアカウント：emailはtest、パスワードはhogehogeでログインできます
+- テストアカウント：emailはtest@test.com、パスワードはhogehogeでログインできます
 
 ## 動機
 - 現在新型コロナの影響で相次いで飲食店が倒産しています。私の地元の行きつけの飲食店も店を畳みました。
